@@ -1,6 +1,44 @@
 body{
   padding: 25px;
+  background: rgb(119,191,255);
+background: linear-gradient(180deg, rgba(119,191,255,1) 0%, rgba(236,144,248,1) 100%);
 }
+
+h1{
+  font-family: Arial;
+  font-size: 36px;
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+h3{
+  font-family: Arial;
+  font-size: 24px;
+  text-align: center;
+  padding: 50px;
+}
+
+p{
+  font-family: Verdana;
+  font-size: 16px;
+  text-align: center;
+}
+
+.smalltext{
+  font-size:14px;
+}
+
 .title {
 	color: #5C6AC4;
+}
+
+.currentTime{
+  padding: 50px;
+  font-size: 32px;
+}
+
+.thanks{
+  font-size: 10px;
+  text-align: right;
 }
