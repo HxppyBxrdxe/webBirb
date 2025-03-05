@@ -9,6 +9,13 @@ h1{
   font-size: 36px;
   font-style: italic;
   text-align: center;
+  padding: 30px;
+}
+
+h2{
+  font-family: Arial;
+  font-size: 30px;
+  text-align: center;
   padding-bottom: 50px;
 }
 
@@ -29,6 +36,13 @@ p{
   font-size:14px;
 }
 
+.smallesttext{
+  font-size: 8px;
+  font-family: Comic Sans MS;
+}
+
+}
+
 .title {
 	color: #5C6AC4;
 }
@@ -41,4 +55,10 @@ p{
 .thanks{
   font-size: 10px;
   text-align: right;
+}
+
+.cooliroha {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
 }
