@@ -1,8 +1,45 @@
+@font-face {
+  font-family: 'Archive';
+  src: url('fonts/Archive-Regular.woff2') format(woff2);
+}
+
 body{
   padding: 25px;
   background: rgb(119,191,255);
 background: linear-gradient(180deg, rgba(119,191,255,1) 0%, rgba(236,144,248,1) 100%);
 }
+
+header{
+  display: flex;              /* Enable Flexbox */
+  justify-content: center;    /* Center horizontally */
+  align-items: center;        /* Center vertically */
+  height: 100px;              /* Set header height */
+  background: #1abc9c;        /* Header background */
+  color: white;               /* Text color */
+  text-align: center;         /* Ensure multi-line text is centered */
+}
+
+.stickyheader {
+  position: sticky;              /* Make it sticky */
+  top: 0;                        /* Stick to the top */
+  
+  display: flex;                 /* Enable Flexbox */
+  flex-direction: column;        /* Stack items vertically */
+  justify-content: center;       /* Center vertically */
+  align-items: center;           /* Center horizontally */
+  
+  padding: 10px 10px 30px;       /* Keep your padding */
+  background: rgba(236,144,248,1);
+  color: #f1f1f1;
+  z-index: 999;                  /* Keep header on top */
+  text-align: center;            /* Ensure multi-line text is centered */
+}
+
+.stickyheader img {
+  max-width: 100%;               /* Ensure image scales within the container */
+  height: auto;                  /* Maintain aspect ratio */
+}
+
 
 h1{
   font-family: Arial;
@@ -13,6 +50,10 @@ h1{
 }
 
 h2{
+  font-family: Arial;
+}
+
+.TestNotif{
   font-family: Arial;
   font-size: 30px;
   text-align: center;
