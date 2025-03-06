@@ -21,12 +21,10 @@ header{
 
 .stickyheader {
   position: sticky;
-  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
   padding: 10px 10px 30px;
   background: rgba(236,144,248,1);
   color: #f1f1f1;
@@ -39,6 +37,9 @@ header{
   height: auto;
 }
 
+.stickywebBirb{
+  font-family: Archive;
+}
 
 h1{
   font-family: Arial;
