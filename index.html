@@ -12,67 +12,16 @@
         <span id="typewriter"></span>
       </h1>
     </div>
-    
-    <script>
-    const messages = ["Welcome to webBirb!", "Explore the magic!", "Join the fun!"];
-    let msgIndex = 0;
-    let index = 0;
-    const el = document.getElementById('typewriter');
-    
-    function type() {
-      if (index < messages[msgIndex].length) {
-        el.textContent += messages[msgIndex][index];
-        index++;
-        setTimeout(type, 100);
-      } else {
-        setTimeout(erase, 5000);
-      }
-    }
-    
-    function erase() {
-      if (index > 0) {
-        el.textContent = messages[msgIndex].substring(0, index - 1);
-        index--;
-        setTimeout(erase, 50);
-      } else {
-        msgIndex = (msgIndex + 1) % messages.length;
-        setTimeout(type, 500);
-      }
-    }
-    
-    type();
-    </script>
-    
-    <style>
-    #typewriter-container {
-      display: inline-block;
-      width: 300px;
-      text-align: center;
-    }
-    
-    #typewriter {
-      white-space: nowrap;
-      border-right: 2px solid white;
-      animation: blink 0.8s steps(1) infinite;
-    }
-    
-    @keyframes blink {
-      50% {
-        border-color: transparent;
-      }
-    }
-    </style>       
 
     <div class="stickyheader" id="myHeader">
       <button class="hamburger" id="hamburger-btn" aria-label="Open Menu">
         ☰
       </button>
-    
+
       <img src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/Banner.png" alt="Header Image" width="200" height="auto">
       <h2 class="stickywebBirb">webBirb</h2>
       <p>Pain</p>
     </div>
-    
 
     <div class="sidebar" id="sidebar">
       <button class="close-btn" id="close-btn" aria-label="Close Menu">✕</button>
@@ -82,23 +31,21 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
-    
 
     <div class="overlay" id="overlay"></div>
-    
-      <h1 class="title">Hello World! </h1>
-      <h3 id="currentTime"></h3>
-      <script src="script.js"></script>
-      <p class="smalltext"><i><sub>This just displays the day, date, and <em><i>AS COT WAS SO KIND TO POINT OUT</i></em> my time.</sub></i></p>
-      <p class="smallesttext">I will fix this one day...</p>
-      <p class="smalltext"><i><sub>It was just a feature of the compiler I was using until I found something...</sub></i></p>
-      <h2 class="TestNotif">This is still just in testing, come back later.</h2>      
-      <p class="thanks"><i>Thanks</i></p>
-      <p class="thanks"><sub><i>Birdie</i></sub></p>
-      <img class="cooliroha" src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/CoolIroha.png" 
+
+    <h1 class="title">Hello World! </h1>
+    <h3 id="currentTime"></h3>
+    <p class="smalltext"><i><sub>This just displays the day, date, and <em><i>AS COT WAS SO KIND TO POINT OUT</i></em> my time.</sub></i></p>
+    <p class="smallesttext">I will fix this one day...</p>
+    <p class="smalltext"><i><sub>It was just a feature of the compiler I was using until I found something...</sub></i></p>
+    <h2 class="TestNotif">This is still just in testing, come back later.</h2>      
+    <p class="thanks"><i>Thanks</i></p>
+    <p class="thanks"><sub><i>Birdie</i></sub></p>
+    <img class="cooliroha" src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/CoolIroha.png" 
      width="80" 
      height="auto" />
 
+    <script src="script.js"></script>
   </body>
-
 </html>
