@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   overlay.addEventListener('click', closeSidebar);
 
   // Typewriter effect
-  const messages = ["Welcome to webBirb!", "Explore the magic!", "Join the fun!"];
+  const messages = ["Welcome to webBirb!", "This was a bad idea", "Point and laugh at this!"];
   let msgIndex = 0;
   let index = 0;
   const el = document.getElementById('typewriter');
