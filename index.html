@@ -23,9 +23,9 @@
       if (index < messages[msgIndex].length) {
         el.textContent += messages[msgIndex][index];
         index++;
-        setTimeout(type, 100); // Typing speed
+        setTimeout(type, 100);
       } else {
-        setTimeout(erase, 5000); // Wait 5 seconds before erasing
+        setTimeout(erase, 5000);
       }
     }
     
@@ -33,10 +33,10 @@
       if (index > 0) {
         el.textContent = messages[msgIndex].substring(0, index - 1);
         index--;
-        setTimeout(erase, 50); // Deleting speed
+        setTimeout(erase, 50);
       } else {
-        msgIndex = (msgIndex + 1) % messages.length; // Next message
-        setTimeout(type, 500); // Short delay before typing again
+        msgIndex = (msgIndex + 1) % messages.length;
+        setTimeout(type, 500);
       }
     }
     
@@ -44,17 +44,15 @@
     </script>
     
     <style>
-    /* Typewriter Container (Prevents Shifting) */
     #typewriter-container {
       display: inline-block;
-      width: 300px; /* Fixed width to prevent shifting */
-      text-align: center; /* Ensure it's centered */
+      width: 300px;
+      text-align: center;
     }
     
-    /* Typewriter Text and Cursor */
     #typewriter {
-      white-space: nowrap; /* Keep text on one line */
-      border-right: 2px solid white; /* Cursor */
+      white-space: nowrap;
+      border-right: 2px solid white;
       animation: blink 0.8s steps(1) infinite;
     }
     
@@ -66,18 +64,16 @@
     </style>       
 
     <div class="stickyheader" id="myHeader">
-      <!-- Hamburger Menu Icon -->
       <button class="hamburger" id="hamburger-btn" aria-label="Open Menu">
         ☰
       </button>
     
-      <!-- Header Content -->
       <img src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/Banner.png" alt="Header Image" width="200" height="auto">
       <h2 class="stickywebBirb">webBirb</h2>
-      <p>More text below the image!</p>
+      <p>Pain</p>
     </div>
     
-    <!-- Slide-out Sidebar -->
+
     <div class="sidebar" id="sidebar">
       <button class="close-btn" id="close-btn" aria-label="Close Menu">✕</button>
       <ul>
@@ -87,7 +83,7 @@
       </ul>
     </div>
     
-    <!-- Dark Overlay -->
+
     <div class="overlay" id="overlay"></div>
     
       <h1 class="title">Hello World! </h1>
