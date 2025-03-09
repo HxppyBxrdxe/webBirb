@@ -8,20 +8,88 @@
   <body>
 
     <div class="header">
-      <h1>Header</h1>
-      <p>Brrrrrrrr!</p>
-    </div>
-
-
-    <div class="stickyheader" id="myHeader">
-      <img src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/Banner.png" alt="Header Image"
-      width="200"
-      height="auto">
-      <p class="stickywebBirb">Blah, Blah, Blah, some stuff. I'll have links here later</p>
+      <h1 id="typewriter-container">
+        <span id="typewriter"></span>
+      </h1>
     </div>
     
+    <script>
+    const messages = ["Welcome to webBirb!", "Explore the magic!", "Join the fun!"];
+    let msgIndex = 0;
+    let index = 0;
+    const el = document.getElementById('typewriter');
+    
+    function type() {
+      if (index < messages[msgIndex].length) {
+        el.textContent += messages[msgIndex][index];
+        index++;
+        setTimeout(type, 100); // Typing speed
+      } else {
+        setTimeout(erase, 5000); // Wait 5 seconds before erasing
+      }
+    }
+    
+    function erase() {
+      if (index > 0) {
+        el.textContent = messages[msgIndex].substring(0, index - 1);
+        index--;
+        setTimeout(erase, 50); // Deleting speed
+      } else {
+        msgIndex = (msgIndex + 1) % messages.length; // Next message
+        setTimeout(type, 500); // Short delay before typing again
+      }
+    }
+    
+    type();
+    </script>
+    
+    <style>
+    /* Typewriter Container (Prevents Shifting) */
+    #typewriter-container {
+      display: inline-block;
+      width: 300px; /* Fixed width to prevent shifting */
+      text-align: center; /* Ensure it's centered */
+    }
+    
+    /* Typewriter Text and Cursor */
+    #typewriter {
+      white-space: nowrap; /* Keep text on one line */
+      border-right: 2px solid white; /* Cursor */
+      animation: blink 0.8s steps(1) infinite;
+    }
+    
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+    </style>       
 
-
+    <div class="stickyheader" id="myHeader">
+      <!-- Hamburger Menu Icon -->
+      <button class="hamburger" id="hamburger-btn" aria-label="Open Menu">
+        ☰
+      </button>
+    
+      <!-- Header Content -->
+      <img src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/Banner.png" alt="Header Image" width="200" height="auto">
+      <h2 class="stickywebBirb">webBirb</h2>
+      <p>More text below the image!</p>
+    </div>
+    
+    <!-- Slide-out Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <button class="close-btn" id="close-btn" aria-label="Close Menu">✕</button>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    
+    <!-- Dark Overlay -->
+    <div class="overlay" id="overlay"></div>
+    
       <h1 class="title">Hello World! </h1>
       <h3 id="currentTime"></h3>
       <script src="script.js"></script>
