@@ -1,50 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TestingPage</title>
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/burdie.png">
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
 
-    <div class="header">
-      <h1 id="typewriter-container">
-        <span id="typewriter"></span>
-      </h1>
-    </div>
-
     <div class="stickyheader" id="myHeader">
-      <button class="hamburger" id="hamburger-btn" aria-label="Open Menu">
-        ☰
-      </button>
-
-      <img src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/Banner.png" alt="Header Image" width="200" height="auto">
-      <h2 class="stickywebBirb">webBirb</h2>
-      <p class="smalltext">Ouch. Painful.</p>
+      <!-- Left: Hamburger Menu -->
+      <div class="header-hamburger">
+        <button class="hamburger" id="hamburger-btn" aria-label="Open Menu">☰</button>
+      </div>
+    
+      <!-- Center: Header Content (Logo and Text) -->
+      <div class="header-content">
+        <img src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/Banner.png" alt="Header Image" width="200" height="auto">
+        <p class="smalltext">Ouch. Painful.</p>
+      </div>
+    
+      <!-- Right: Clock -->
+      <div class="clock">
+        <h3 id="currentTime">00:00</h3>
+      </div>
     </div>
 
+    <!-- Slide-out Sidebar -->
     <div class="sidebar" id="sidebar">
       <button class="close-btn" id="close-btn" aria-label="Close Menu">✕</button>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">A bit about me</a></li>
-        <li><a href="contact.html">Call me maybe?</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About me!</a></li>
+        <li><a href="contact.html">Reaching out?</a></li>
+        <li><a href="specs.html">My specs</a></li>
       </ul>
     </div>
 
     <div class="overlay" id="overlay"></div>
 
     <h1 class="title">Hello World! </h1>
-    <h3 id="currentTime"></h3>
     <p class="smalltext"><i><sub>This just displays the day, date, and <em><i>AS COT WAS SO KIND TO POINT OUT</i></em> my time.</sub></i></p>
     <p class="smallesttext">I will fix this one day...</p>
     <p class="smalltext"><i><sub>It was just a feature of the compiler I was using until I found something...</sub></i></p>
-    <h2 class="TestNotif">This is still just in testing, come back later.</h2>      
+    <h2 class="TestNotif">This is still just in testing, come back later.</h2>
     <p class="thanks">Thanks</p>
     <p class="thanks"><sub>Birdie</sub></p>
     <img class="cooliroha" src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/CoolIroha.png" 
-     width="80" 
-     height="auto" />
+     width="80" height="auto" />
 
     <script src="script.js"></script>
   </body>
