@@ -236,6 +236,12 @@ p{
 	color: #5C6AC4;
 }
 
+.SocialsHeader{
+  text-align: center;
+  font-family: Archive;
+  font-size: 24px;
+}
+
 .currentTime{
   padding: 10px;
   font-size: 32px;
@@ -245,6 +251,15 @@ p{
   font-size: 10px;
   text-align: right;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.WindowsReasons{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.WindowsReasonsdd{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
 }
 
 .cooliroha {
@@ -265,6 +280,11 @@ p{
 hr.rounded {
   border-top: 10px solid #EFDFBB;
   border-radius: 8px;
+}
+
+hr.rounded2 {
+  border-top: 10px solid #DFE8E6;
+  border-radius: 5px;
 }
 
 .divider {
@@ -300,6 +320,29 @@ hr.rounded {
   background-color: #A0430A;
   margin: 5px;
   border-radius: 4px;
+}
+
+.divider3 {
+  font-size: 28px;
+  font-family: Archive;
+  color: #DFE8E6;
+  display: flex;
+  align-items: center;
+
+}
+
+.divider3::before, .divider3::after {
+  flex: 1;
+  content: '';
+  padding: 3px;
+  background-color: #A0430A;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+/* Hover Effect for the Link */
+.divider3:hover {
+  color: #ffccff; /* Light pink hover color */
 }
 
 /* Text Section Styling */
@@ -338,6 +381,10 @@ hr.rounded {
   white-space: pre;
   font-family: monospace;
   overflow-x: auto;
+}
+
+.ascii-art{
+  font-family: VT323;
 }
 
 /* Footer Container - Full Width */
@@ -484,6 +531,14 @@ hr.rounded {
   /* Smaller Logo */
   .header-content img {
     max-width: 120px;        /* Shrink logo */
+  }
+
+  .HeaderContentText{
+    font-size: 14px;
+  }
+
+  .clock{
+    font-size: 12px;
   }
 
   /* Minimize Footer Text */
