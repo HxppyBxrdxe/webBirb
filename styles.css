@@ -3,6 +3,11 @@
   src: url('fonts/ArchiveRegular.woff2') format(woff2);
 }
 
+@font-face {
+  font-family: VT323;
+  src: url('fonts/vt323-latin-400-normal.woff2') format(woff2);
+}
+
 body{
   padding: 15px;
   background: rgb(119,191,255);
@@ -213,13 +218,18 @@ p{
 }
 
 .smalltext{
-  font-size:14px;
+  font-size: 28px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .smallesttext{
   font-size: 8px;
   font-family: Archive;
+}
+
+.commandtext {
+  font-family: VT323;
+  font-size: medium;
 }
 
 .title {
@@ -249,4 +259,240 @@ p{
   margin-right: auto;
   width: 300px;
   height: auto;
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 10px solid #EFDFBB;
+  border-radius: 8px;
+}
+
+.divider {
+  font-size: 30px;
+  font-family: Archive;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+}
+
+.divider::before, .divider::after {
+  flex: 1;
+  content: '';
+  padding: 3px;
+  background-color: #722F37;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+.divider2 {
+  font-size: 24px;
+  font-family: Archive;
+  color: #DFE8E6;
+  display: flex;
+  align-items: center;
+
+}
+
+.divider2::before, .divider2::after {
+  flex: 1;
+  content: '';
+  padding: 3px;
+  background-color: #A0430A;
+  margin: 5px;
+  border-radius: 4px;
+}
+
+/* Text Section Styling */
+.text-section {
+  display: flex;             /* Allows stacking of paragraphs */
+  flex-direction: column;    /* Stack items vertically */
+  flex: 1;                   /* Allow text section to expand */
+  min-width: 200px;          /* Prevents squishing */
+  max-width: 100%;           /* Prevents overflow */
+  box-sizing: border-box;    /* Includes padding in width */
+}
+
+/* Image and Text Container */
+.image-text-container {
+  display: flex;          /* Use Flexbox */
+  align-items: center;    /* Align image and text vertically */
+  gap: 20px;              /* Space between image and text */
+  flex-wrap: wrap;        /* Allows wrapping on smaller screens */
+  max-width: 100%;        /* Ensures container doesn’t overflow */
+}
+
+/* Image Style */
+.left-image {
+  width: 400px;           /* Set desired image width */
+  height: auto;           /* Maintain aspect ratio */
+  max-width: 100%;        /* Prevents overflow on small screens */
+}
+
+.system-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding: 20px;
+  white-space: pre;
+  font-family: monospace;
+  overflow-x: auto;
+}
+
+/* Footer Container - Full Width */
+.footer {
+  display: flex;
+  justify-content: space-between; /* Push content to corners */
+  align-items: center; /* Align vertically */
+  padding: 20px; /* Add space around content */
+  width: 100%; /* Ensure full page width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  background: #3c2a1d; /* Footer background */
+  color: #f1f1f1; /* Footer text color */
+  font-family: Archive, sans-serif;
+}
+
+/* Footer Left Section (Text) */
+.footer-left {
+  flex: 1; /* Allow to expand */
+}
+
+/* Footer Right Section (Image Links) */
+.footer-right {
+  display: flex;
+  gap: 20px; /* Space between images */
+}
+
+/* Image Styling */
+.footer-right img {
+  width: 30px; /* Image size */
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover and click */
+  cursor: pointer; /* Pointer cursor for clickable images */
+}
+
+/* Hover Effect: Scale and Lighten */
+.footer-right a:hover img {
+  transform: scale(1.2); /* Enlarge on hover */
+  filter: hue-rotate(-50deg) brightness(1.2); /* Red tint + Brightness */
+}
+
+/* Click Effect: Shrink Slightly */
+.footer-right a:active img {
+  transform: scale(0.9); /* Shrink on click */
+}
+
+@media (max-width: 768px) {
+  .system-info {
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+  }
+}
+
+/* Responsive Design: Stack on small screens */
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center content */
+  }
+
+  .footer-right {
+    margin-top: 10px; /* Space between sections */
+    justify-content: center; /* Center images on small screens */
+  }
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .image-text-container {
+    flex-direction: column;  /* Stack image and text vertically */
+    align-items: center;     /* Center-align items */
+  }
+
+  .left-image {
+    width: 100%;             /* Image takes full width */
+    max-width: 400px;        /* Prevents it from being too large */
+  }
+
+  .text-section {
+    width: 100%;             /* Ensures text stays within screen */
+    text-align: center;      /* Centers text for better readability */
+  }
+}
+
+/* Responsive Sticky Header */
+@media (max-width: 768px) {
+  .stickyheader {
+    flex-direction: column; /* Stack vertically */
+    text-align: center;     /* Center content */
+    padding: 10px;          /* Adjust padding */
+  }
+
+  /* Center Hamburger Button */
+  .header-hamburger {
+    justify-content: center; /* Center button on small screens */
+    flex: 0 0 auto;          /* Allow it to shrink */
+  }
+
+  /* Logo - Ensure proper sizing */
+  .header-content img {
+    max-width: 150px;        /* Smaller logo on mobile */
+    height: auto;
+  }
+
+  /* Clock - Centered Below */
+  .clock {
+    justify-content: center; /* Center horizontally */
+    width: 100%;             /* Ensure full width for centering */
+    margin-left: 0;          /* Reset any previous alignment */
+  }
+
+  .clock h3 {
+    font-size: 20px;         /* Adjust font size for mobile */
+    text-align: center;      /* Ensure text stays centered */
+    width: 100%;             /* Full width for better centering */
+  }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stack vertically */
+    text-align: center;     /* Center text */
+    padding: 15px;          /* Adjust padding */
+  }
+
+  /* Footer Right (Social Links) */
+  .footer-right {
+    justify-content: center; /* Center icons */
+    margin-top: 10px;        /* Space between sections */
+  }
+
+  .footer-right img {
+    width: 25px;             /* Slightly smaller icons */
+  }
+}
+
+/* Ultra-Small Screens */
+@media (max-width: 480px) {
+  .stickyheader {
+    padding: 5px;            /* Reduce padding */
+  }
+
+  /* Smaller Logo */
+  .header-content img {
+    max-width: 120px;        /* Shrink logo */
+  }
+
+  /* Minimize Footer Text */
+  .footer-left p {
+    font-size: 12px;         /* Smaller text for better fit */
+  }
+
+  /* Reduce Icon Size */
+  .footer-right img {
+    width: 20px;             /* Smaller social icons */
+  }
 }
