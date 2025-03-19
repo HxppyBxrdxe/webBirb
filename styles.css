@@ -24,7 +24,6 @@ header{
   text-align: center;
 }
 
-/* Sticky Header */
 .stickyheader {
   position: sticky;
   top: 0;
@@ -37,7 +36,6 @@ header{
   z-index: 999;
 }
 
-/* Hamburger Button */
 .hamburger {
   background: transparent;
   border: none;
@@ -46,57 +44,50 @@ header{
   cursor: pointer;
 }
 
-/* Ensure fixed sections */
 .header-hamburger {
-  flex: 0 0 120px; /* Fixed width for the hamburger menu */
+  flex: 0 0 120px; 
   display: flex;
   align-items: center;
 }
 
-/* Clock Styling */
 .currentTime {
   font-family: Archive, sans-serif;
   font-size: 24px;
-  white-space: nowrap; /* Prevents line breaks */
+  white-space: nowrap; 
 }
 
-/* Clock - Fixed Width to prevent shifting */
 .clock {
-  flex: 0 0 120px; /* Fixed width for the clock */
+  flex: 0 0 120px; 
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-/* Make sure the clock is on the right */
 .stickyheader .clock {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  flex-shrink: 0; /* Prevent it from shrinking */
-  margin-left: auto; /* Align the clock to the right */
+  flex-shrink: 0;
+  margin-left: auto; 
 }
 
 .header-content {
-  flex: 1; /* Takes remaining space */
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
-
-/* Make sure the clock is on the right */
 .stickyheader .currentTime {
-  flex-shrink: 0; /* Prevent it from shrinking */
-  margin-left: auto; /* Align the clock to the right */
+  flex-shrink: 0; 
+  margin-left: auto; 
 }
 
-/* Sidebar (Initially Hidden Off-screen) */
 .sidebar {
   font-family: Archive;
   position: fixed;
   top: 0;
-  left: -350px; /* Start hidden off-screen */
+  left: -350px;
   width: 300px;
   height: 100%;
   background: #3c2a1d;
@@ -106,15 +97,15 @@ header{
   z-index: 1002;
   display: flex;
   flex-direction: column;
-  transition: left 0.5s ease; /* Smooth sliding animation */
+  transition: left 0.5s ease;
 }
 
-/* Sidebar Open (Slide in from Left) */
+
 .sidebar.open {
   left: 0; /* Slide in */
 }
 
-/* Close Button */
+
 .close-btn {
   position: absolute;
   top: 10px;
@@ -124,10 +115,9 @@ header{
   color: #EAE0C8;
   font-size: 30px;
   cursor: pointer;
-  transition: color 0.3s ease; /* Smooth color transition */
+  transition: color 0.3s ease; 
 }
 
-/* Hover Effect: Change to Red */
 .close-btn:hover {
   color: red;
 }
@@ -155,7 +145,6 @@ header{
   color: #C2B280;
 }
 
-/* Overlay (Hidden by Default) */
 .overlay {
   position: fixed;
   top: 0;
@@ -163,21 +152,19 @@ header{
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease;
-  z-index: 1001; /* Below sidebar */
+  z-index: 1001; 
 }
 
-/* Overlay Visible (When sidebar is open) */
 .overlay.show {
   opacity: 1;
   visibility: visible;
 }
 
-/* Ensure image is responsive but doesn't overflow */
 .stickyheader img {
-  max-width: 200px;
+  max-width: 150px;
   height: auto;
 }
 
@@ -211,20 +198,44 @@ h3{
   padding: 10px;
 }
 
-p{
+p {
+  font-family: Verdana;
+  font-size: 16px;
+}
+
+.centertext {
   font-family: Verdana;
   font-size: 16px;
   text-align: center;
 }
 
+.centralImage{
+  display: block;
+  width: 100px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .smalltext{
-  font-size: 28px;
+  font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .smallesttext{
   font-size: 8px;
   font-family: Archive;
+}
+
+.smallesttextlink{
+  text-align: center;
+  font-size: 10px;
+  font-family: Archive;
+  color:#ffccff;
+}
+
+.smallesttextlink:hover {
+  color: #5C6AC4; 
 }
 
 .commandtext {
@@ -236,6 +247,53 @@ p{
 	color: #5C6AC4;
 }
 
+.Flag {
+  width: 100px;
+  height: 70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  display: none;
+  text-align: left;
+  margin-top: 20px;
+}
+
+img {
+  width: 300px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+button {
+  cursor: pointer;
+  background: #008CBA;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-family: VT323;
+}
+
+
+.Favourites{
+  text-align: left;
+  font-family: Archive;
+  font-size: medium;
+}
+
+.GameImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: auto;
+  padding-bottom: 20px;
+}
+
 .SocialsHeader{
   text-align: center;
   font-family: Archive;
@@ -245,6 +303,35 @@ p{
 .currentTime{
   padding: 10px;
   font-size: 32px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; 
+  gap: 30px;
+}
+
+.age-label, .anniversary-label {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: black; 
+  text-align: center;
+  font-family: VT323;
+}
+
+/* Dynamic Output */
+.age-result, .anniversary-result {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ff79c6;
+  text-align: center;
+  font-family: Archive;
+}
+
+.Spotify {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .thanks{
@@ -342,33 +429,30 @@ hr.rounded2 {
 
 /* Hover Effect for the Link */
 .divider3:hover {
-  color: #ffccff; /* Light pink hover color */
+  color: #ffccff;
 }
 
-/* Text Section Styling */
 .text-section {
-  display: flex;             /* Allows stacking of paragraphs */
-  flex-direction: column;    /* Stack items vertically */
-  flex: 1;                   /* Allow text section to expand */
-  min-width: 200px;          /* Prevents squishing */
-  max-width: 100%;           /* Prevents overflow */
-  box-sizing: border-box;    /* Includes padding in width */
+  display: flex;             
+  flex-direction: column;   
+  flex: 1;                
+  min-width: 200px;    
+  max-width: 100%;         
+  box-sizing: border-box;  
 }
 
-/* Image and Text Container */
 .image-text-container {
-  display: flex;          /* Use Flexbox */
-  align-items: center;    /* Align image and text vertically */
-  gap: 20px;              /* Space between image and text */
-  flex-wrap: wrap;        /* Allows wrapping on smaller screens */
-  max-width: 100%;        /* Ensures container doesn’t overflow */
+  display: flex;     
+  align-items: center;    
+  gap: 20px;              
+  flex-wrap: wrap;       
+  max-width: 100%;       
 }
 
-/* Image Style */
 .left-image {
-  width: 400px;           /* Set desired image width */
-  height: auto;           /* Maintain aspect ratio */
-  max-width: 100%;        /* Prevents overflow on small screens */
+  width: 400px;       
+  height: auto;    
+  max-width: 100%;     
 }
 
 .system-info {
@@ -387,47 +471,64 @@ hr.rounded2 {
   font-family: VT323;
 }
 
-/* Footer Container - Full Width */
 .footer {
   display: flex;
-  justify-content: space-between; /* Push content to corners */
-  align-items: center; /* Align vertically */
-  padding: 20px; /* Add space around content */
-  width: 100%; /* Ensure full page width */
-  box-sizing: border-box; /* Include padding in width calculation */
-  background: #3c2a1d; /* Footer background */
-  color: #f1f1f1; /* Footer text color */
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 20px; 
+  width: 100%; 
+  box-sizing: border-box;
+  background: #3c2a1d; 
+  color: #f1f1f1; 
   font-family: Archive, sans-serif;
 }
 
-/* Footer Left Section (Text) */
-.footer-left {
-  flex: 1; /* Allow to expand */
+.FooterText{
+  font-family: Archive;
 }
 
-/* Footer Right Section (Image Links) */
+.footer-left {
+  flex: 1; 
+}
+
 .footer-right {
   display: flex;
-  gap: 20px; /* Space between images */
+  gap: 15px; 
 }
 
-/* Image Styling */
 .footer-right img {
-  width: 30px; /* Image size */
+  width: 30px;
   height: auto;
-  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover and click */
-  cursor: pointer; /* Pointer cursor for clickable images */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
 }
-
-/* Hover Effect: Scale and Lighten */
 .footer-right a:hover img {
-  transform: scale(1.2); /* Enlarge on hover */
-  filter: hue-rotate(-50deg) brightness(1.2); /* Red tint + Brightness */
+  transform: scale(1.2); 
+  filter: hue-rotate(-50deg) brightness(1.2); 
 }
 
-/* Click Effect: Shrink Slightly */
 .footer-right a:active img {
-  transform: scale(0.9); /* Shrink on click */
+  transform: scale(0.9); 
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; 
+  justify-items: center; 
+}
+
+.grid-container img {
+  width: 30px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.grid-container a:hover img {
+  transform: scale(1.2);
+}
+
+.grid-container a:active img {
+  transform: scale(0.9); 
 }
 
 @media (max-width: 768px) {
@@ -438,99 +539,111 @@ hr.rounded2 {
   }
 }
 
-/* Responsive Design: Stack on small screens */
 @media (max-width: 600px) {
   .footer {
-    flex-direction: column; /* Stack items vertically */
-    text-align: center; /* Center content */
+    flex-direction: column; 
+    text-align: center;
   }
 
   .footer-right {
-    margin-top: 10px; /* Space between sections */
-    justify-content: center; /* Center images on small screens */
+    margin-top: 10px;
+    justify-content: center; 
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
-
-/* Responsive Fix */
 @media (max-width: 768px) {
   .image-text-container {
-    flex-direction: column;  /* Stack image and text vertically */
-    align-items: center;     /* Center-align items */
+    flex-direction: column; 
+    align-items: center;   
   }
 
   .left-image {
-    width: 100%;             /* Image takes full width */
-    max-width: 400px;        /* Prevents it from being too large */
+    width: 100%;       
+    max-width: 400px;      
   }
 
   .text-section {
-    width: 100%;             /* Ensures text stays within screen */
-    text-align: center;      /* Centers text for better readability */
+    width: 100%;     
+    text-align: center;      
   }
 }
-
-/* Responsive Sticky Header */
 @media (max-width: 768px) {
   .stickyheader {
-    flex-direction: column; /* Stack vertically */
-    text-align: center;     /* Center content */
-    padding: 10px;          /* Adjust padding */
+    flex-direction: column; 
+    text-align: center;     
+    padding: 10px;       
   }
 
-  /* Center Hamburger Button */
   .header-hamburger {
-    justify-content: center; /* Center button on small screens */
-    flex: 0 0 auto;          /* Allow it to shrink */
+    justify-content: center; 
+    flex: 0 0 auto;        
   }
 
-  /* Logo - Ensure proper sizing */
   .header-content img {
-    max-width: 150px;        /* Smaller logo on mobile */
+    max-width: 125px;      
     height: auto;
   }
 
-  /* Clock - Centered Below */
   .clock {
-    justify-content: center; /* Center horizontally */
-    width: 100%;             /* Ensure full width for centering */
-    margin-left: 0;          /* Reset any previous alignment */
+    justify-content: center; 
+    width: 100%;       
+    margin-left: 0;       
   }
 
   .clock h3 {
-    font-size: 20px;         /* Adjust font size for mobile */
-    text-align: center;      /* Ensure text stays centered */
-    width: 100%;             /* Full width for better centering */
+    font-size: 20px;       
+    text-align: center;     
+    width: 100%;          
   }
 }
 
 /* Responsive Footer */
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column; /* Stack vertically */
-    text-align: center;     /* Center text */
-    padding: 15px;          /* Adjust padding */
+    flex-direction: column;
+    text-align: center;   
+    padding: 15px;        
   }
 
   /* Footer Right (Social Links) */
   .footer-right {
-    justify-content: center; /* Center icons */
-    margin-top: 10px;        /* Space between sections */
+    justify-content: center; 
+    margin-top: 10px;     
   }
 
   .footer-right img {
-    width: 25px;             /* Slightly smaller icons */
+    width: 25px;         
   }
 }
 
 /* Ultra-Small Screens */
 @media (max-width: 480px) {
   .stickyheader {
-    padding: 5px;            /* Reduce padding */
+    padding: 5px;       
+  }
+
+  .GameImage{
+  width: 300px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  .Spotify{
+  width: 300px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   }
 
   /* Smaller Logo */
   .header-content img {
-    max-width: 120px;        /* Shrink logo */
+    max-width: 120px;     
   }
 
   .HeaderContentText{
@@ -543,11 +656,11 @@ hr.rounded2 {
 
   /* Minimize Footer Text */
   .footer-left p {
-    font-size: 12px;         /* Smaller text for better fit */
+    font-size: 12px;    
   }
 
   /* Reduce Icon Size */
   .footer-right img {
-    width: 20px;             /* Smaller social icons */
+    width: 20px;  
   }
 }
