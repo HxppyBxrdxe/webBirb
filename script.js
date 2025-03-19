@@ -81,14 +81,16 @@ function displayItemInfo() {
   document.getElementById("itemAge").textContent = `${age} years old`;
   document.getElementById("nextAnniversary").textContent = `${daysToNext} days left`;
 }
-  
-document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".showButton");
-  const contents = document.querySelectorAll(".content");
 
-  buttons.forEach((button, index) => {
-      button.addEventListener("click", function () {
-          contents[index].style.display = "block"; // Show corresponding content
-      });
+const buttons = document.querySelectorAll(".showButton");
+const contents = document.querySelectorAll(".content");
+
+buttons.forEach((button, index) => {
+    button.addEventListener("click", function () {
+        contents[index].style.display = "block"; // Show corresponding content
+    });
+
   });
+document.addEventListener('DOMContentLoaded', () => {
+  displayItemInfo();
 });
