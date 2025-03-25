@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Function to format and show time
     function showTime() {
       const currentTime = new Date();
       const hours = String(currentTime.getHours()).padStart(2, '0');
@@ -19,19 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
   
-    // Function to open sidebar
     function openSidebar() {
       sidebar.classList.add('open');
       overlay.classList.add('show');
     }
   
-    // Function to close sidebar
+   
     function closeSidebar() {
       sidebar.classList.remove('open');
       overlay.classList.remove('show');
     }
   
-    // Open and closr sidebar on hamburger click
+ 
     hamburgerBtn.addEventListener('click', openSidebar);
 
     closeBtn.addEventListener('click', closeSidebar);
@@ -39,13 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', closeSidebar);
   });
 
-// Function to calculate item age
+
 function getItemAge(releaseDate) {
   const release = new Date(releaseDate);
   const today = new Date();
   let age = today.getFullYear() - release.getFullYear();
 
-  // Adjust age if the anniversary hasn't happened this year
   if (
     today.getMonth() < release.getMonth() ||
     (today.getMonth() === release.getMonth() && today.getDate() < release.getDate())
@@ -55,18 +52,18 @@ function getItemAge(releaseDate) {
   return age;
 }
 
-// Function to calculate next anniversary countdown
+
 function getNextAnniversary(releaseDate) {
   const today = new Date();
   const release = new Date(releaseDate);
   let nextAnniversary = new Date(today.getFullYear(), release.getMonth(), release.getDate());
 
-  // If this year's anniversary has passed, use next year
+ 
   if (today > nextAnniversary) {
     nextAnniversary.setFullYear(today.getFullYear() + 1);
   }
 
-  // Calculate the difference in days
+
   const timeDiff = nextAnniversary - today;
   const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
   return daysLeft;
@@ -87,10 +84,51 @@ const contents = document.querySelectorAll(".content");
 
 buttons.forEach((button, index) => {
     button.addEventListener("click", function () {
-        contents[index].style.display = "block"; // Show corresponding content
+        contents[index].style.display = "block";
     });
 
   });
 document.addEventListener('DOMContentLoaded', () => {
   displayItemInfo();
+});
+
+let darkmode = localStorage.getItem('darkmode')
+const themeSwitch = document.getElementById('theme-switch')
+
+const enableDarkmode = () => {
+  document.body.classList.add('darkmode')
+  localStorage.setItem('darkmode', 'active')
+}
+
+const disableDarkmode = () => {
+  document.body.classList.remove('darkmode')
+  localStorage.setItem('darkmode', null)
+}
+
+if(darkmode === "active") enableDarkmode()
+
+themeSwitch.addEventListener("click", () => {
+  darkmode = localStorage.getItem('darkmode')
+  darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+})
+
+document.getElementById("theme-toggle-icon").addEventListener("click", function() {
+  const body = document.body;
+  const icon = document.getElementById("theme-toggle-icon");
+
+  
+  icon.style.opacity = 0;
+
+  setTimeout(() => {
+     
+      if (body.classList.contains("dark-mode")) {
+          body.classList.replace("dark-mode", "light-mode");
+          icon.src = "sun.png"; // Light mode icon
+      } else {
+          body.classList.replace("light-mode", "dark-mode");
+          icon.src = "lighttodark.png"; // Dark mode icon
+      }
+
+      icon.style.opacity = 1;
+  }, 300); 
 });
