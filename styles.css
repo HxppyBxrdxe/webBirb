@@ -774,12 +774,17 @@ hr.rounded2 {
     width: 80%;
   }
   .clock {
-    flex: 0 0 80px;
+    flex: 0 0 80px; 
   }
   .YouTube{
     width: 80%;
   }
-
+  .hamburger{
+    font-size: 20px;
+  }
+  .header-hamburger{
+    flex: 0, 0, 90;
+  }
 }
 
 @media (max-width: 480px) {
@@ -796,5 +801,11 @@ hr.rounded2 {
 
   .YouTube{
     width: 70%;
+  }
+  .hamburger{
+    font-size: 14px;
+  }
+  .header-hamburger{
+    flex: 0, 0, 70;
   }
 }
