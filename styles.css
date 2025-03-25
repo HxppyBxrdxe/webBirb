@@ -8,23 +8,46 @@
   src: url('fonts/vt323-latin-400-normal.woff2') format(woff2);
 }
 
-body{
-  padding: 15px;
-  background: rgb(119,191,255);
-  background: linear-gradient(180deg, rgba(119,191,255,1) 0%, rgba(236,144,248,1) 100%);
+@font-face {
+  font-family: Cleanow;
+  src: url('fonts/Cleanow.woff2') format(woff2);
 }
 
-header{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  background: #1abc9c;
-  color: white;
-  text-align: center;
+.ArchiveFont{
+  font-family: Archive;
+  font-size: medium;
+  color: var(--secondary-text);
 }
 
-/* Sticky Header */
+.VT323Font{
+  font-family: VT323;
+  font-size: large;
+  color: var(--secondary-text);
+}
+
+.CleanowFont{
+  font-family: Cleanow;
+  font-size: medium;
+  color: var(--secondary-text);
+}
+
+:root{
+  --base-color: #DEAB90;
+  --base-variant: #9D6B53;
+  --text-color: #F0EAD2;;
+  --secondary-text: #3a435d;
+  --primary-color: #582F0E;
+  --accent-color: #F96F5D;
+}
+
+.darkmode {
+  --base-color: #411D13;
+  --base-variant: #2F0E07;
+  --text-color: #FFCDB2;
+  --secondary-text: #cdcdcd;
+  --primary-color: #b7b7b7;
+  --accent-color: #CAA6A6;
+}
 .stickyheader {
   position: sticky;
   top: 0;
@@ -32,89 +55,113 @@ header{
   justify-content: space-between;
   align-items: center;
   padding: 2px 10px;
-  background: rgba(236,144,248,1);
-  color: #f1f1f1;
+  background: var(--base-variant);
+  color: var(--text-color);
   z-index: 999;
 }
 
-/* Hamburger Button */
 .hamburger {
   background: transparent;
   border: none;
-  color: #f1f1f1;
+  color: var(--secondary-text);
   font-size: 30px;
   cursor: pointer;
 }
 
-/* Ensure fixed sections */
+body{
+  background-color: var(--base-color);
+}
+
+#theme-switch{
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+#theme-switch img{
+  fill: var(--primary-color);
+  width: 40px;
+  height: auto;
+}
+#theme-switch img:last-child{
+  display: none;
+}
+.darkmode #theme-switch img:first-child{
+  display: none;
+}
+.darkmode #theme-switch img:last-child{
+  display: block;
+}
+
 .header-hamburger {
-  flex: 0 0 120px; /* Fixed width for the hamburger menu */
+  flex: 0 0 120px; 
   display: flex;
   align-items: center;
 }
-
-/* Clock Styling */
 .currentTime {
   font-family: Archive, sans-serif;
   font-size: 24px;
-  white-space: nowrap; /* Prevents line breaks */
+  white-space: nowrap;
 }
 
-/* Clock - Fixed Width to prevent shifting */
+
 .clock {
-  flex: 0 0 120px; /* Fixed width for the clock */
+  flex: 0 0 120px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-/* Make sure the clock is on the right */
 .stickyheader .clock {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  flex-shrink: 0; /* Prevent it from shrinking */
-  margin-left: auto; /* Align the clock to the right */
+  flex-shrink: 0; 
+  margin-left: auto; 
 }
 
 .header-content {
-  flex: 1; /* Takes remaining space */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-/* Make sure the clock is on the right */
 .stickyheader .currentTime {
-  flex-shrink: 0; /* Prevent it from shrinking */
-  margin-left: auto; /* Align the clock to the right */
+  flex-shrink: 0; 
+  margin-left: auto;
 }
 
-/* Sidebar (Initially Hidden Off-screen) */
+
 .sidebar {
   font-family: Archive;
   position: fixed;
   top: 0;
-  left: -350px; /* Start hidden off-screen */
+  left: -350px; 
   width: 300px;
   height: 100%;
-  background: #3c2a1d;
-  color: #C2B280;
+  background: var(--base-color);
+  color: var(--text-color);
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   z-index: 1002;
   display: flex;
   flex-direction: column;
-  transition: left 0.5s ease; /* Smooth sliding animation */
+  transition: left 0.5s ease;
 }
 
-/* Sidebar Open (Slide in from Left) */
 .sidebar.open {
-  left: 0; /* Slide in */
+  left: 0; 
 }
 
-/* Close Button */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -124,10 +171,9 @@ header{
   color: #EAE0C8;
   font-size: 30px;
   cursor: pointer;
-  transition: color 0.3s ease; /* Smooth color transition */
+  transition: color 0.3s ease;
 }
 
-/* Hover Effect: Change to Red */
 .close-btn:hover {
   color: red;
 }
@@ -152,10 +198,9 @@ header{
 }
 
 .sidebar ul li a:hover {
-  color: #C2B280;
+  color: var(--accent-color);
 }
 
-/* Overlay (Hidden by Default) */
 .overlay {
   position: fixed;
   top: 0;
@@ -163,19 +208,17 @@ header{
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  opacity: 0; /* Initially hidden */
+  opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s ease;
-  z-index: 1001; /* Below sidebar */
+  z-index: 1001;
 }
 
-/* Overlay Visible (When sidebar is open) */
 .overlay.show {
   opacity: 1;
   visibility: visible;
 }
 
-/* Ensure image is responsive but doesn't overflow */
 .stickyheader img {
   max-width: 150px;
   height: auto;
@@ -186,19 +229,26 @@ header{
 }
 
 h1{
-  font-family: Arial;
+  font-family: Cleanow;
   font-size: 36px;
   font-style: italic;
   text-align: center;
   padding: 30px;
+  color: var(--text-color);
 }
 
 h2{
-  font-family: Arial;
+  font-family: Cleanow;
+  color: var(--text-color);
+}
+
+h4{
+  font-family: Cleanow;
+  color: var(--secondary-text);
 }
 
 .TestNotif{
-  font-family: Arial;
+  font-family: Cleanow;
   font-size: 30px;
   text-align: center;
   padding-bottom: 50px;
@@ -209,15 +259,17 @@ h3{
   font-size: 24px;
   text-align: center;
   padding: 10px;
+  color: var(--secondary-text);
 }
 
-p {
-  font-family: Verdana;
+p{
+  font-family: Cleanow;
   font-size: 16px;
+  color: var(--text-color);
 }
 
 .centertext {
-  font-family: Verdana;
+  font-family: Cleanow;
   font-size: 16px;
   text-align: center;
 }
@@ -231,24 +283,34 @@ p {
 }
 
 .smalltext{
-  font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-family: Cleanow;
+  color: var(--secondary-text);
 }
 
 .smallesttext{
   font-size: 8px;
   font-family: Archive;
+  color: var(--secondary-text);
 }
 
 .smallesttextlink{
   text-align: center;
   font-size: 10px;
   font-family: Archive;
-  color:#ffccff;
+  color: var(--text-color);
 }
 
 .smallesttextlink:hover {
-  color: #5C6AC4; /* Light pink hover color */
+  color: #5C6AC4; 
+}
+
+.links{
+  color: var(--accent-color);
+}
+
+.links:hover{
+  color: #A0430A;
 }
 
 .commandtext {
@@ -257,7 +319,7 @@ p {
 }
 
 .title {
-	color: #5C6AC4;
+	color: var(--text-color);
 }
 
 .Flag {
@@ -269,15 +331,15 @@ p {
 }
 
 .content {
-  display: none; /* Hide all content initially */
-  text-align: left; /* Align to the left */
+  display: none;
+  text-align: left; 
   margin-top: 20px;
 }
 
 img {
-  width: 300px; /* Adjust as needed */
-  display: block; /* Ensures image doesn't stay inline */
-  margin-bottom: 10px; /* Space between image and paragraph */
+  width: 300px; 
+  display: block; 
+  margin-bottom: 10px;
 }
 
 .IrohaPicLap {
@@ -288,8 +350,8 @@ img {
 
 button {
   cursor: pointer;
-  background: #008CBA;
-  color: white;
+  background: var(--accent-color);
+  color: var(--base-color);
   padding: 10px;
   border: none;
   border-radius: 5px;
@@ -302,6 +364,7 @@ button {
   text-align: left;
   font-family: Archive;
   font-size: medium;
+  color: var(--secondary-text);
 }
 
 .GameImage {
@@ -324,27 +387,26 @@ button {
   font-size: 32px;
 }
 
-/* Container for Age and Anniversary */
 .container {
   display: flex;
-  flex-direction: column; /* Stack vertically */
-  gap: 30px; /* Space between the sections */
+  flex-direction: column;
+  gap: 30px;
 }
 
-/* Labels */
+
 .age-label, .anniversary-label {
   font-size: 24px;
-  margin-bottom: 10px; /* Space below the label */
-  color: black; /* Dark text for contrast */
+  margin-bottom: 10px; 
+  color: var(--text-color); 
   text-align: center;
   font-family: VT323;
 }
 
-/* Dynamic Output */
+
 .age-result, .anniversary-result {
   font-size: 48px;
   font-weight: bold;
-  color: #ff79c6; /* Pinkish text */
+  color: var(--accent-color); 
   text-align: center;
   font-family: Archive;
 }
@@ -358,22 +420,26 @@ button {
 .thanks{
   font-size: 10px;
   text-align: right;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Cleanow;
 }
 
 .WindowsReasons{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Cleanow;
+  color: var(--secondary-text);
 }
 
 .WindowsReasonsdd{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Cleanow;
   font-style: italic;
+  color: var(--text-color);
 }
 
 .cooliroha {
   display: block;
   margin-left: auto;
   margin-right: 0;
+  width: 100px;
+  height: auto;
 }
 
 .woobabygif{
@@ -384,7 +450,6 @@ button {
   height: auto;
 }
 
-/* Rounded border */
 hr.rounded {
   border-top: 10px solid #EFDFBB;
   border-radius: 8px;
@@ -407,7 +472,7 @@ hr.rounded2 {
   flex: 1;
   content: '';
   padding: 3px;
-  background-color: #722F37;
+  background-color: var(--accent-color);
   margin: 5px;
   border-radius: 4px;
 }
@@ -425,7 +490,7 @@ hr.rounded2 {
   flex: 1;
   content: '';
   padding: 3px;
-  background-color: #A0430A;
+  background-color: var(--accent-color);
   margin: 5px;
   border-radius: 4px;
 }
@@ -443,40 +508,36 @@ hr.rounded2 {
   flex: 1;
   content: '';
   padding: 3px;
-  background-color: #A0430A;
+  background-color: var(--accent-color);
   margin: 5px;
   border-radius: 4px;
 }
 
-/* Hover Effect for the Link */
 .divider3:hover {
-  color: #ffccff; /* Light pink hover color */
+  color: #ffccff; 
 }
 
-/* Text Section Styling */
 .text-section {
-  display: flex;             /* Allows stacking of paragraphs */
-  flex-direction: column;    /* Stack items vertically */
-  flex: 1;                   /* Allow text section to expand */
-  min-width: 200px;          /* Prevents squishing */
-  max-width: 100%;           /* Prevents overflow */
-  box-sizing: border-box;    /* Includes padding in width */
+  display: flex;          
+  flex-direction: column;   
+  flex: 1;                  
+  min-width: 200px;     
+  max-width: 100%;         
+  box-sizing: border-box; 
 }
-
-/* Image and Text Container */
 .image-text-container {
-  display: flex;          /* Use Flexbox */
-  align-items: center;    /* Align image and text vertically */
-  gap: 20px;              /* Space between image and text */
-  flex-wrap: wrap;        /* Allows wrapping on smaller screens */
-  max-width: 100%;        /* Ensures container doesn’t overflow */
+  display: flex;    
+  align-items: center;  
+  gap: 20px;            
+  flex-wrap: wrap;       
+  max-width: 100%;       
 }
 
 /* Image Style */
 .left-image {
-  width: 400px;           /* Set desired image width */
-  height: auto;           /* Maintain aspect ratio */
-  max-width: 100%;        /* Prevents overflow on small screens */
+  width: 400px;        
+  height: auto;          
+  max-width: 100%;       
 }
 
 .system-info {
@@ -493,18 +554,33 @@ hr.rounded2 {
 
 .ascii-art{
   font-family: VT323;
+  color: var(--secondary-text);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
-/* Footer Container - Full Width */
+.YouTube {
+  display: block;
+  margin: 20px auto; 
+  border: 10px solid var(--base-variant);
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7); 
+}
+
+.darkbg{
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
 .footer {
   display: flex;
-  justify-content: space-between; /* Push content to corners */
-  align-items: center; /* Align vertically */
-  padding: 20px; /* Add space around content */
-  width: 100%; /* Ensure full page width */
-  box-sizing: border-box; /* Include padding in width calculation */
-  background: #3c2a1d; /* Footer background */
-  color: #f1f1f1; /* Footer text color */
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box; 
+  background: var(--base-variant);
+  color: var(--text-color);
   font-family: Archive, sans-serif;
 }
 
@@ -512,57 +588,50 @@ hr.rounded2 {
   font-family: Archive;
 }
 
-/* Footer Left Section (Text) */
+
 .footer-left {
-  flex: 1; /* Allow to expand */
+  flex: 1;
 }
 
-/* Footer Right Section (Image Links) */
 .footer-right {
   display: flex;
-  gap: 15px; /* Space between images */
+  gap: 15px; 
 }
 
-/* Image Styling */
 .footer-right img {
-  width: 30px; /* Image size */
+  width: 30px; 
   height: auto;
-  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover and click */
-  cursor: pointer; /* Pointer cursor for clickable images */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer; 
 }
 
-/* Hover Effect: Scale and Lighten */
 .footer-right a:hover img {
-  transform: scale(1.2); /* Enlarge on hover */
-  filter: hue-rotate(-50deg) brightness(1.2); /* Red tint + Brightness */
+  transform: scale(1.2); 
+  filter: hue-rotate(-50deg) brightness(1.2); 
 }
 
-/* Click Effect: Shrink Slightly */
 .footer-right a:active img {
-  transform: scale(0.9); /* Shrink on click */
+  transform: scale(0.9); 
 }
 
-/* 3x2 Grid Layout */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 20px; /* Space between items */
-  justify-items: center; /* Center items horizontally */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; 
+  justify-items: center; 
 }
-
-/* Ensure the icons are responsive */
 .grid-container img {
-  width: 30px; /* Set your desired size */
+  width: 30px;
   height: auto;
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  transition: transform 0.3s ease;
 }
 
 .grid-container a:hover img {
-  transform: scale(1.2); /* Enlarge on hover */
+  transform: scale(1.2);
 }
 
 .grid-container a:active img {
-  transform: scale(0.9); /* Shrink on click */
+  transform: scale(0.9);
 }
 
 @media (max-width: 768px) {
@@ -573,98 +642,91 @@ hr.rounded2 {
   }
 }
 
-/* Responsive Design: Stack on small screens */
 @media (max-width: 600px) {
   .footer {
-    flex-direction: column; /* Stack items vertically */
-    text-align: center; /* Center content */
+    flex-direction: column; 
+    text-align: center; 
   }
 
   .footer-right {
-    margin-top: 10px; /* Space between sections */
-    justify-content: center; /* Center images on small screens */
+    margin-top: 10px;
+    justify-content: center;
   }
 
   .grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Switch to 2x3 on small screens */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
-
-/* Responsive Fix */
 @media (max-width: 768px) {
   .image-text-container {
-    flex-direction: column;  /* Stack image and text vertically */
-    align-items: center;     /* Center-align items */
+    flex-direction: column; 
+    align-items: center;  
   }
 
   .left-image {
-    width: 100%;             /* Image takes full width */
-    max-width: 400px;        /* Prevents it from being too large */
+    width: 100%;         
+    max-width: 400px;     
   }
 
   .text-section {
-    width: 100%;             /* Ensures text stays within screen */
-    text-align: center;      /* Centers text for better readability */
+    width: 100%;          
+    text-align: center;    
   }
 }
-
-/* Responsive Sticky Header */
 @media (max-width: 768px) {
   .stickyheader {
-    flex-direction: column; /* Stack vertically */
-    text-align: center;     /* Center content */
-    padding: 10px;          /* Adjust padding */
+    flex-direction: column;
+    text-align: center;     
+    padding: 10px;         
   }
 
-  /* Center Hamburger Button */
+
   .header-hamburger {
-    justify-content: center; /* Center button on small screens */
-    flex: 0 0 auto;          /* Allow it to shrink */
+    justify-content: center; 
+    flex: 0 0 auto;         
   }
 
-  /* Logo - Ensure proper sizing */
+
   .header-content img {
-    max-width: 125px;        /* Smaller logo on mobile */
+    max-width: 125px;      
     height: auto;
   }
 
-  /* Clock - Centered Below */
+
   .clock {
-    justify-content: center; /* Center horizontally */
-    width: 100%;             /* Ensure full width for centering */
-    margin-left: 0;          /* Reset any previous alignment */
+    justify-content: center;
+    width: 100%;            
+    margin-left: 0; 
   }
 
   .clock h3 {
-    font-size: 20px;         /* Adjust font size for mobile */
-    text-align: center;      /* Ensure text stays centered */
-    width: 100%;             /* Full width for better centering */
+    font-size: 20px;        
+    text-align: center;     
+    width: 100%;            
   }
 }
 
-/* Responsive Footer */
 @media (max-width: 768px) {
   .footer {
-    flex-direction: column; /* Stack vertically */
-    text-align: center;     /* Center text */
-    padding: 15px;          /* Adjust padding */
+    flex-direction: column;
+    text-align: center;   
+    padding: 15px;     
   }
 
-  /* Footer Right (Social Links) */
+
   .footer-right {
-    justify-content: center; /* Center icons */
-    margin-top: 10px;        /* Space between sections */
+    justify-content: center;
+    margin-top: 10px;     
   }
 
   .footer-right img {
-    width: 25px;             /* Slightly smaller icons */
+    width: 25px;          
   }
 }
 
-/* Ultra-Small Screens */
 @media (max-width: 480px) {
   .stickyheader {
-    padding: 5px;            /* Reduce padding */
+    padding: 5px;     
   }
 
   .GameImage{
@@ -685,7 +747,7 @@ hr.rounded2 {
 
   /* Smaller Logo */
   .header-content img {
-    max-width: 120px;        /* Shrink logo */
+    max-width: 120px;   
   }
 
   .HeaderContentText{
@@ -696,14 +758,14 @@ hr.rounded2 {
     font-size: 12px;
   }
 
-  /* Minimize Footer Text */
+
   .footer-left p {
-    font-size: 12px;         /* Smaller text for better fit */
+    font-size: 12px;      
   }
 
-  /* Reduce Icon Size */
+
   .footer-right img {
-    width: 20px;             /* Smaller social icons */
+    width: 20px;        
   }
 }
 
@@ -711,13 +773,20 @@ hr.rounded2 {
   .IrohaPicLap {
     width: 80%;
   }
+  .clock {
+    flex: 0 0 80px; 
+  }
 }
 
 @media (max-width: 480px) {
   img {
-    width: 60%; /* Even smaller on very small screens */
+    width: 60%; 
   }
   .IrohaPicLap {
     width: 60%;
+    
+  }
+  .clock {        
+    flex: 0 0 60px;
   }
 }
