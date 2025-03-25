@@ -673,60 +673,9 @@ hr.rounded2 {
     text-align: center;    
   }
 }
-@media (max-width: 768px) {
-  .stickyheader {
-    flex-direction: column;
-    text-align: center;     
-    padding: 10px;         
-  }
-
-
-  .header-hamburger {
-    justify-content: center; 
-    flex: 0 0 auto;         
-  }
-
-
-  .header-content img {
-    max-width: 125px;      
-    height: auto;
-  }
-
-
-  .clock {
-    justify-content: center;
-    width: 100%;            
-    margin-left: 0; 
-  }
-
-  .clock h3 {
-    font-size: 20px;        
-    text-align: center;     
-    width: 100%;            
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-    text-align: center;   
-    padding: 15px;     
-  }
-
-
-  .footer-right {
-    justify-content: center;
-    margin-top: 10px;     
-  }
-
-  .footer-right img {
-    width: 25px;          
-  }
-}
-
 @media (max-width: 480px) {
   .stickyheader {
-    padding: 5px;     
+    padding: 5px;            /* Reduce padding */
   }
 
   .GameImage{
@@ -747,25 +696,25 @@ hr.rounded2 {
 
   /* Smaller Logo */
   .header-content img {
-    max-width: 120px;   
+    max-width: 100px;     
   }
 
   .HeaderContentText{
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .clock{
     font-size: 12px;
   }
 
-
+  /* Minimize Footer Text */
   .footer-left p {
     font-size: 12px;      
   }
 
-
+  /* Reduce Icon Size */
   .footer-right img {
-    width: 20px;        
+    width: 20px;            
   }
 }
 
