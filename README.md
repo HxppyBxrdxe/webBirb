@@ -14,3 +14,6 @@ Weleome to:
 _(07/04/2025)_
 I finished the first final product of this website.
 Hope you enjoy!
+
+_(09/04/2025)_
+Updated a section in the 'About Birdie' page to include a section outlining the conversion from Spotify to YouTube music.
