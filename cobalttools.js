@@ -72,15 +72,15 @@ document.addEventListener('DOMContentLoaded', () => {
     popup.appendChild(textContainer);
     document.body.appendChild(popup);
 
-    const urlPattern = /^(https?:\/\/)/i;  // Matches 'http://' or 'https://'
+    const urlPattern = /^(https?:\/\/)/i;
 
     searchForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-    
+        event.preventDefault();
+        
         const query = searchInput.value.trim();
     
         if (query === '') {
-            // Case for empty input
+            
             textElement.textContent = 'No URL entered.';
             secondLine.textContent = 'Please enter a URL to continue.';
             smileImg.style.display = 'none'; 
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 0);
             }, 2000);
         } else if (urlPattern.test(query)) {
-            // Case for valid URL
+          
             navigator.clipboard.writeText(query)
                 .then(() => {
                     textElement.textContent = `You searched for: ${query}`;
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 2000);
                 });
         } else {
-            // Case for invalid URL
+          
             textElement.textContent = 'Invalid link. Please enter a valid URL.';
             secondLine.textContent = 'Make sure the URL starts with "https://".'; 
             smileImg.style.display = 'none'; 
