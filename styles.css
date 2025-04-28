@@ -13,6 +13,11 @@
   src: url('fonts/Cleanow.woff2') format(woff2);
 }
 
+@font-face {
+  font-family: IBMPlexMono;
+  src: url('fonts/IBMPlexMono.woff2') format(woff2);
+}
+
 .ArchiveFont{
   font-family: Archive;
   font-size: medium;
@@ -203,6 +208,50 @@ body{
   font-size: 30px;
   cursor: pointer;
   transition: color 0.3s ease;
+}
+
+form#searchForm {
+  background-color: var(--base-variant);
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  gap: 10px;
+  align-items: center; 
+}
+
+input#searchInput {
+  padding: 5px 10px; 
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  background-color: var(--base-color);
+  color: var(--text-color);
+  font-size: 16px;
+  flex-grow: 1;
+  height: 25px; 
+}
+
+input#searchInput::placeholder {
+  color: var(--secondary-text);
+}
+
+.cobalttextfield {
+  font-family: IBMPlexMono;
+  color: var(--text-color)
+}
+
+.cobaltbutton {
+  cursor: pointer;
+  background: var(--accent-color);
+  color: var(--base-color);
+  padding: 0 10px, 10px; 
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-family: Cleanow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .close-btn:hover {
@@ -627,6 +676,12 @@ hr.rounded2 {
   background: var(--base-variant);
   color: var(--text-color);
   font-family: Archive, sans-serif;
+}
+
+li{
+  font-family: Cleanow;
+  font-size: 16px;
+  color: var(--text-color);
 }
 
 .FooterText{
