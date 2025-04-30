@@ -2,6 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
 
+    let isReady = false;
+    setTimeout(() => {
+        isReady = true;
+    }, 8000);
+
     const overlay = document.createElement('div');
     overlay.id = 'dark-overlay';
     overlay.style.position = 'fixed';
@@ -36,14 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(popup);
 
     const smileImg = document.createElement('img');
-    //smileImg.src = 'https://cobalt.tools/meowbalt/smile.png';
+    // smileImg.src = 'https://cobalt.tools/meowbalt/smile.png';
     smileImg.alt = 'Smile!';
     smileImg.style.width = '100px';
     smileImg.style.height = '100px';
     smileImg.style.objectFit = 'contain';
 
     const errorImg = document.createElement('img');
-    //errorImg.src = 'https://cobalt.tools/meowbalt/error.png';
+    // errorImg.src = 'https://cobalt.tools/meowbalt/error.png';
     errorImg.alt = 'Error';
     errorImg.style.width = '100px';
     errorImg.style.height = '100px';
@@ -59,12 +64,16 @@ document.addEventListener('DOMContentLoaded', () => {
     textElement.id = 'searchText';
     textElement.style.fontSize = '19px';
     textElement.style.color = 'var(--text-color)';
+    textElement.style.textAlign = 'center';
+    textElement.style.width = '100%';
     textContainer.appendChild(textElement);
 
     const secondLine = document.createElement('p');
     secondLine.id = 'secondLine';
     secondLine.style.fontSize = '14px';
     secondLine.style.color = 'var(--text-color)';
+    secondLine.style.textAlign = 'center';
+    secondLine.style.width = '100%';    
     textContainer.appendChild(secondLine);
 
     popup.appendChild(textContainer);
@@ -93,6 +102,19 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault();
 
         const query = searchInput.value.trim();
+
+        if (!isReady) {
+            textElement.textContent = 'cloudflare turnstile is still checking if you\'re not a bot. if it takes too long, you can try: disabling weird browser extensions, changing networks, using a different browser, or checking your device for malware.';
+            secondLine.textContent = '(Not really)';
+            smileImg.style.display = 'none';
+            errorImg.style.display = 'block';
+            showPopup();
+
+            setTimeout(() => {
+                hidePopup();
+            }, 5000);
+            return;
+        }
 
         if (query === '') {
             textElement.textContent = 'No URL entered.';
