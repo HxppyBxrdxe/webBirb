@@ -41,14 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(popup);
 
     const smileImg = document.createElement('img');
-    // smileImg.src = 'https://cobalt.tools/meowbalt/smile.png';
+    smileImg.src = 'https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/WebP/AzunaLoading.webp';
     smileImg.alt = 'Smile!';
     smileImg.style.width = '100px';
     smileImg.style.height = '100px';
     smileImg.style.objectFit = 'contain';
 
     const errorImg = document.createElement('img');
-    // errorImg.src = 'https://cobalt.tools/meowbalt/error.png';
+    errorImg.src = 'https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/WebP/shaking-head-no-no.webp';
     errorImg.alt = 'Error';
     errorImg.style.width = '100px';
     errorImg.style.height = '100px';
