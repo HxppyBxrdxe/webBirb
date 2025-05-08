@@ -36,6 +36,12 @@
   color: var(--secondary-text);
 }
 
+.IBMPlexMonoFont{
+  font-family: IBMPlexMono;
+  font-size: medium;
+  color: var(--secondary-text);
+}
+
 :root{
   --base-color: #DEAB90;
   --base-variant: #9D6B53;
@@ -56,7 +62,8 @@
 
 .links-grid {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto, auto, auto, auto, auto, auto, auto, auto; 
+  grid-template-rows: auto auto; 
   column-gap: 5px;
   align-items: center;
 }
@@ -71,6 +78,59 @@
 
 .item1 {
   grid-row: 1 / span 2;
+}
+
+.item2 {
+  grid-column: 3; 
+  
+}
+
+.item3 {
+  grid-column: 4;
+}
+
+.item4 {
+  grid-column: 5;
+}
+
+.item5 {
+  grid-column: 6;
+}
+
+.item6 {
+  grid-column: 3; 
+  grid-row: 2;
+}
+
+.item7 {
+  grid-column: 4; 
+  grid-row: 2;
+}
+
+.item8 {
+  grid-column: 5; 
+  grid-row: 2; 
+}
+
+.item9 {
+  grid-column: 6;
+  grid-row: 2;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--base-color);
+  border-radius: 12px;
+  height: 6px;
+  }
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 20px;
 }
 
 .roundedgif{
@@ -636,14 +696,15 @@ hr.rounded2 {
 .system-info {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: start;
+  justify-content: flex-start; 
+  align-items: flex-start;
   gap: 20px;
   padding: 20px;
   white-space: pre;
   font-family: monospace;
-  overflow-x: auto;
+  overflow-x: auto; 
 }
+
 
 .ascii-art{
   font-family: VT323;
@@ -736,14 +797,6 @@ li{
 
 .grid-container a:active img {
   transform: scale(0.9); 
-}
-
-@media (max-width: 768px) {
-  .system-info {
-      flex-direction: column;
-      align-items: center;
-      text-align: left;
-  }
 }
 
 @media (max-width: 600px) {
