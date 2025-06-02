@@ -104,6 +104,25 @@
     <p>What games do I play? Well...</p>
     <p class="centertext">I'll just...</p>
     <img src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/photos/Screenshot%202025-03-13%20190713%20(Small).png" class="GameImage">
+    <script>
+  fetch('steamLibrary.json')
+    .then(res => res.json())
+    .then(games => {
+      const container = document.getElementById('steam-library');
+      games.forEach(game => {
+        const entry = document.createElement('div');
+        entry.style.marginBottom = '10px';
+        entry.innerHTML = `
+          <img src="${game.icon}" width="40" style="vertical-align:middle;" />
+          <strong>${game.name}</strong> — ${game.playtime} hours
+        `;
+        container.appendChild(entry);
+      });
+    })
+    .catch(() => {
+      document.getElementById('steam-library').textContent = 'Failed to load Steam data.';
+    });
+</script>
     <p class="smalltext">My Steam Library</p>
     <br>
     <img src="https://raw.githubusercontent.com/HxppyBxrdxe/webBirb/refs/heads/main/img/photos/Screenshot%202025-03-13%20190814.png" class="GameImage">
